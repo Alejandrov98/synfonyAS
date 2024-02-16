@@ -120,51 +120,19 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
             return array (  '_controller' => 'AppBundle\\Controller\\DefaultController::indexAction',  '_route' => 'homepage',);
         }
 
-        if (0 === strpos($pathinfo, '/producto')) {
-            // productos_list
-            if ($pathinfo === '/producto') {
-                if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
-                    $allow = array_merge($allow, array('GET', 'HEAD'));
-                    goto not_productos_list;
-                }
+        // productos
+        if ($pathinfo === '/productos') {
+            return array (  '_controller' => 'AppBundle\\Controller\\DefaultController::productosAction',  '_route' => 'productos',);
+        }
 
-                return array (  '_controller' => 'AppBundle\\Controller\\DefaultController::listProducto',  '_route' => 'productos_list',);
-            }
-            not_productos_list:
+        // insert_user
+        if ($pathinfo === '/insert/user') {
+            return array (  '_controller' => 'AppBundle\\Controller\\UserController::insertUser',  '_route' => 'insert_user',);
+        }
 
-            // cms_producto_new
-            if ($pathinfo === '/producto/new') {
-                if ($this->context->getMethod() != 'POST') {
-                    $allow[] = 'POST';
-                    goto not_cms_producto_new;
-                }
-
-                return array (  '_controller' => 'AppBundle\\Controller\\DefaultController::newProducto',  '_route' => 'cms_producto_new',);
-            }
-            not_cms_producto_new:
-
-            // cms_producto_edit
-            if (preg_match('#^/producto/(?P<id>[^/]++)/edit$#s', $pathinfo, $matches)) {
-                if ($this->context->getMethod() != 'PUT') {
-                    $allow[] = 'PUT';
-                    goto not_cms_producto_edit;
-                }
-
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'cms_producto_edit')), array (  '_controller' => 'AppBundle\\Controller\\DefaultController::editProducto',));
-            }
-            not_cms_producto_edit:
-
-            // cms_producto_delete
-            if ($pathinfo === '/producto/id') {
-                if ($this->context->getMethod() != 'DELETE') {
-                    $allow[] = 'DELETE';
-                    goto not_cms_producto_delete;
-                }
-
-                return array (  '_controller' => 'AppBundle\\Controller\\DefaultController::deleteProducto',  '_route' => 'cms_producto_delete',);
-            }
-            not_cms_producto_delete:
-
+        // get_usuarios
+        if ($pathinfo === '/get/usuarios') {
+            return array (  '_controller' => 'AppBundle\\Controller\\UserController::getAllPost',  '_route' => 'get_usuarios',);
         }
 
         throw 0 < count($allow) ? new MethodNotAllowedException(array_unique($allow)) : new ResourceNotFoundException();

@@ -17,6 +17,7 @@
       <parameter key="SensioFrameworkExtraBundle">Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle</parameter>
       <parameter key="AppBundle">AppBundle\AppBundle</parameter>
       <parameter key="BlogBundle">BlogBundle\BlogBundle</parameter>
+      <parameter key="ProductosBundle">ProductosBundle\ProductosBundle</parameter>
       <parameter key="DebugBundle">Symfony\Bundle\DebugBundle\DebugBundle</parameter>
       <parameter key="WebProfilerBundle">Symfony\Bundle\WebProfilerBundle\WebProfilerBundle</parameter>
       <parameter key="SensioDistributionBundle">Sensio\Bundle\DistributionBundle\SensioDistributionBundle</parameter>
@@ -68,6 +69,11 @@
         <parameter key="path">C:\Users\Usuario\OneDrive\Escritorio\tp_as\src\BlogBundle</parameter>
         <parameter key="namespace">BlogBundle</parameter>
       </parameter>
+      <parameter key="ProductosBundle" type="collection">
+        <parameter key="parent">null</parameter>
+        <parameter key="path">C:\Users\Usuario\OneDrive\Escritorio\tp_as\src\ProductosBundle</parameter>
+        <parameter key="namespace">ProductosBundle</parameter>
+      </parameter>
       <parameter key="DebugBundle" type="collection">
         <parameter key="parent">null</parameter>
         <parameter key="path">C:\Users\Usuario\OneDrive\Escritorio\tp_as\vendor\symfony\symfony\src\Symfony\Bundle\DebugBundle</parameter>
@@ -93,7 +99,7 @@
     <parameter key="kernel.container_class">appDevDebugProjectContainer</parameter>
     <parameter key="database_host">localhost</parameter>
     <parameter key="database_port">null</parameter>
-    <parameter key="database_name">symfony</parameter>
+    <parameter key="database_name">tp_as</parameter>
     <parameter key="database_user">root</parameter>
     <parameter key="database_password">null</parameter>
     <parameter key="mailer_transport">smtp</parameter>
@@ -461,7 +467,7 @@
                 <tag name="cache.pool" clearer="cache.default_clearer"/>
                 <argument>cwpD0W94Mg</argument>
                 <argument>0</argument>
-                <argument>BgfYAHYlFm3x2A3-ul+who</argument>
+                <argument>56USSZty21XaR9+1qzEUlZ</argument>
                 <argument>C:\Users\Usuario\OneDrive\Escritorio\tp_as\var\cache\dev/pools</argument>
                 <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
                 <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -644,7 +650,7 @@
       <tag name="cache.pool" clearer="cache.default_clearer"/>
       <argument>--MydeRklw</argument>
       <argument>0</argument>
-      <argument>BgfYAHYlFm3x2A3-ul+who</argument>
+      <argument>56USSZty21XaR9+1qzEUlZ</argument>
       <argument>C:\Users\Usuario\OneDrive\Escritorio\tp_as\var\cache\dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -654,7 +660,7 @@
       <tag name="cache.pool" clearer="cache.default_clearer"/>
       <argument>KBdnHdIkzK</argument>
       <argument>0</argument>
-      <argument>BgfYAHYlFm3x2A3-ul+who</argument>
+      <argument>56USSZty21XaR9+1qzEUlZ</argument>
       <argument>C:\Users\Usuario\OneDrive\Escritorio\tp_as\var\cache\dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
@@ -1646,7 +1652,7 @@
       <argument type="collection">
         <argument type="service">
           <service class="Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider" public="false">
-            <argument>65cb699d9371d6.05600715</argument>
+            <argument>65ce9ec2016cb6.20699821</argument>
           </service>
         </argument>
       </argument>
@@ -1794,7 +1800,7 @@
         <argument type="service">
           <service class="Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener" public="false">
             <argument type="service" id="security.token_storage"/>
-            <argument>65cb699d9371d6.05600715</argument>
+            <argument>65ce9ec2016cb6.20699821</argument>
             <argument type="service" id="monolog.logger.security" on-invalid="null"/>
             <argument type="service" id="security.authentication.manager"/>
           </service>
@@ -2164,7 +2170,7 @@
         <argument key="driver">pdo_mysql</argument>
         <argument key="host">localhost</argument>
         <argument key="port">null</argument>
-        <argument key="dbname">symfony</argument>
+        <argument key="dbname">tp_as</argument>
         <argument key="user">root</argument>
         <argument key="password">null</argument>
         <argument key="charset">UTF8</argument>
@@ -2253,7 +2259,9 @@
       <argument type="service">
         <service class="Doctrine\ORM\Configuration" public="false">
           <call method="setEntityNamespaces">
-            <argument type="collection"/>
+            <argument type="collection">
+              <argument key="AppBundle">AppBundle\Entity</argument>
+            </argument>
           </call>
           <call method="setMetadataCacheImpl">
             <argument type="service" id="doctrine_cache.providers.doctrine.orm.default_metadata_cache"/>
@@ -2266,7 +2274,19 @@
           </call>
           <call method="setMetadataDriverImpl">
             <argument type="service">
-              <service class="Doctrine\Common\Persistence\Mapping\Driver\MappingDriverChain" public="false"/>
+              <service class="Doctrine\Common\Persistence\Mapping\Driver\MappingDriverChain" public="false">
+                <call method="addDriver">
+                  <argument type="service">
+                    <service class="Doctrine\ORM\Mapping\Driver\AnnotationDriver" public="false">
+                      <argument type="service" id="annotation_reader"/>
+                      <argument type="collection">
+                        <argument>C:\Users\Usuario\OneDrive\Escritorio\tp_as\src\AppBundle\Entity</argument>
+                      </argument>
+                    </service>
+                  </argument>
+                  <argument>AppBundle\Entity</argument>
+                </call>
+              </service>
             </argument>
           </call>
           <call method="setProxyDir">
@@ -2778,6 +2798,10 @@
       <call method="addPath">
         <argument>C:\Users\Usuario\OneDrive\Escritorio\tp_as\src\BlogBundle/Resources/views</argument>
         <argument>Blog</argument>
+      </call>
+      <call method="addPath">
+        <argument>C:\Users\Usuario\OneDrive\Escritorio\tp_as\src\ProductosBundle/Resources/views</argument>
+        <argument>Productos</argument>
       </call>
       <call method="addPath">
         <argument>C:\Users\Usuario\OneDrive\Escritorio\tp_as\vendor\symfony\symfony\src\Symfony\Bundle\DebugBundle/Resources/views</argument>

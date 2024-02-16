@@ -47,6 +47,7 @@ class ComposerStaticInit0f75259a1ddd3ba4a1496f85ea7834ba
         array (
             'Psr\\Log\\' => 8,
             'Psr\\Cache\\' => 10,
+            'ProductosBundle\\' => 16,
         ),
         'M' => 
         array (
@@ -158,6 +159,10 @@ class ComposerStaticInit0f75259a1ddd3ba4a1496f85ea7834ba
         'Psr\\Cache\\' => 
         array (
             0 => __DIR__ . '/..' . '/psr/cache/src',
+        ),
+        'ProductosBundle\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/src/ProductosBundle',
         ),
         'Monolog\\' => 
         array (

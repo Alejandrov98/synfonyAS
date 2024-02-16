@@ -17,80 +17,133 @@ class __TwigTemplate_5b20544d98168e0d293fc37f78314a076c7f3d5afbbd34955dca93cd90a
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_e5cbc111ffff09774ec4e8f3192ab79462b9b42792d3df7da317540103b7737e = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_e5cbc111ffff09774ec4e8f3192ab79462b9b42792d3df7da317540103b7737e->enter($__internal_e5cbc111ffff09774ec4e8f3192ab79462b9b42792d3df7da317540103b7737e_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "base.html.twig"));
+        $__internal_f3adacbb98cdae417d3579eb657b46f1fb8b8657874f74b7ba3cc9aa833c7aa4 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_f3adacbb98cdae417d3579eb657b46f1fb8b8657874f74b7ba3cc9aa833c7aa4->enter($__internal_f3adacbb98cdae417d3579eb657b46f1fb8b8657874f74b7ba3cc9aa833c7aa4_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "base.html.twig"));
 
-        $__internal_4c3cf6a31dac4b75801643a2d7a03e1fb53c3697b5af68bc51aa5b068533b491 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_4c3cf6a31dac4b75801643a2d7a03e1fb53c3697b5af68bc51aa5b068533b491->enter($__internal_4c3cf6a31dac4b75801643a2d7a03e1fb53c3697b5af68bc51aa5b068533b491_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "base.html.twig"));
+        $__internal_f595367e691ef8084fd48140c6ea8e66c461c9b5f16bdc9543bd7c620d8283ae = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_f595367e691ef8084fd48140c6ea8e66c461c9b5f16bdc9543bd7c620d8283ae->enter($__internal_f595367e691ef8084fd48140c6ea8e66c461c9b5f16bdc9543bd7c620d8283ae_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "base.html.twig"));
 
         // line 1
         echo "<!DOCTYPE html>
 <html>
-  <head>
+<head>
     <title>";
         // line 4
         $this->displayBlock('title', $context, $blocks);
         echo "</title>
-
     <link rel=\"stylesheet\" href=\"";
-        // line 6
+        // line 5
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("css/bootstrap.min.css"), "html", null, true);
         echo "\" />
-  </head>
-  <body>
-    ";
-        // line 9
-        $this->displayBlock('body', $context, $blocks);
-        // line 10
-        echo "    <script src=\"https://code.jquery.com/jquery-3.6.0.min.js\"></script>
+</head>
+<body>
+    <nav class=\"navbar navbar-default\">
+        <div class=\"container-fluid\">
+            <div class=\"navbar-header\">
+                <button type=\"button\" class=\"navbar-toggle collapsed\" data-toggle=\"collapse\" data-target=\"#bs-example-navbar-collapse-1\" aria-expanded=\"false\">
+                    <span class=\"sr-only\">Toggle navigation</span>
+                    <span class=\"icon-bar\"></span>
+                    <span class=\"icon-bar\"></span>
+                    <span class=\"icon-bar\"></span>
+                </button>
+                <a class=\"navbar-brand\" href=\"/\">Cátalogo Online</a>
+            </div>
 
+            <div class=\"collapse navbar-collapse\" id=\"bs-example-navbar-collapse-1\">
+                <ul class=\"nav navbar-nav\">
+                    <li class=\"active\">
+                        <a href=\"/productos\">Todos los productos<span class=\"sr-only\">(current)</span></a>
+                    </li>
+                    <li><a href=\"#\"></a></li>
+                    <li class=\"dropdown\">
+                        <a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\" role=\"button\" aria-haspopup=\"true\" aria-expanded=\"false\">Categorías <span class=\"caret\"></span></a>
+                        <ul class=\"dropdown-menu\">
+                            <li><a href=\"#\">Camas</a></li>
+                            <li><a href=\"#\">Muebles de dormitorio</a></li>
+                            <li><a href=\"#\">Decoración de paredes</a></li>
+                            <li role=\"separator\" class=\"divider\"></li>
+                            <li><a href=\"#\">Cocina</a></li>
+                            <li role=\"separator\" class=\"divider\"></li>
+                            <li><a href=\"#\">Baño</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <form class=\"navbar-form navbar-left\">
+                    <div class=\"form-group\">
+                        <input type=\"text\" class=\"form-control\" placeholder=\"Buscar\" />
+                    </div>
+                    <button type=\"submit\" class=\"btn btn-default\">Buscar</button>
+                </form>
+                <ul class=\"nav navbar-nav navbar-right\">
+                    <li><a href=\"#\">Link</a></li>
+                    <li class=\"dropdown\">
+                        <a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\" role=\"button\" aria-haspopup=\"true\" aria-expanded=\"false\">Dropdown <span class=\"caret\"></span></a>
+                        <ul class=\"dropdown-menu\">
+                            <li><a href=\"#\">Action</a></li>
+                            <li><a href=\"#\">Another action</a></li>
+                            <li><a href=\"#\">Something else here</a></li>
+                            <li role=\"separator\" class=\"divider\"></li>
+                            <li><a href=\"#\">Separated link</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
+
+    ";
+        // line 62
+        $this->displayBlock('body', $context, $blocks);
+        // line 63
+        echo "
+    <script src=\"https://code.jquery.com/jquery-3.6.0.min.js\"></script>
     <script src=\"";
-        // line 12
+        // line 65
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("js/bootstrap.min.js"), "html", null, true);
         echo "\"></script>
-  </body>
+</body>
 </html>
 ";
         
-        $__internal_e5cbc111ffff09774ec4e8f3192ab79462b9b42792d3df7da317540103b7737e->leave($__internal_e5cbc111ffff09774ec4e8f3192ab79462b9b42792d3df7da317540103b7737e_prof);
+        $__internal_f3adacbb98cdae417d3579eb657b46f1fb8b8657874f74b7ba3cc9aa833c7aa4->leave($__internal_f3adacbb98cdae417d3579eb657b46f1fb8b8657874f74b7ba3cc9aa833c7aa4_prof);
 
         
-        $__internal_4c3cf6a31dac4b75801643a2d7a03e1fb53c3697b5af68bc51aa5b068533b491->leave($__internal_4c3cf6a31dac4b75801643a2d7a03e1fb53c3697b5af68bc51aa5b068533b491_prof);
+        $__internal_f595367e691ef8084fd48140c6ea8e66c461c9b5f16bdc9543bd7c620d8283ae->leave($__internal_f595367e691ef8084fd48140c6ea8e66c461c9b5f16bdc9543bd7c620d8283ae_prof);
 
     }
 
     // line 4
     public function block_title($context, array $blocks = array())
     {
-        $__internal_91f8f9cb3de6e3ced9e0674a2d43e4ceb73a9fa044a61661734c8e9183f9e4e7 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_91f8f9cb3de6e3ced9e0674a2d43e4ceb73a9fa044a61661734c8e9183f9e4e7->enter($__internal_91f8f9cb3de6e3ced9e0674a2d43e4ceb73a9fa044a61661734c8e9183f9e4e7_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
+        $__internal_3e9ba872578a85d4b0a6120e8eddb1fd4c1ef9df878c158634df118bf5825b0e = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_3e9ba872578a85d4b0a6120e8eddb1fd4c1ef9df878c158634df118bf5825b0e->enter($__internal_3e9ba872578a85d4b0a6120e8eddb1fd4c1ef9df878c158634df118bf5825b0e_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
 
-        $__internal_95f7520bc90c431671a9a8080fecb35e31a96734098f1109ec673e4df4371ce7 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_95f7520bc90c431671a9a8080fecb35e31a96734098f1109ec673e4df4371ce7->enter($__internal_95f7520bc90c431671a9a8080fecb35e31a96734098f1109ec673e4df4371ce7_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
+        $__internal_fd960e717595a1caebe26d17db8bbedb2ac3ffb46e6f14fc728a22294d397bf3 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_fd960e717595a1caebe26d17db8bbedb2ac3ffb46e6f14fc728a22294d397bf3->enter($__internal_fd960e717595a1caebe26d17db8bbedb2ac3ffb46e6f14fc728a22294d397bf3_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "title"));
 
         echo "Cátalogo Online";
         
-        $__internal_95f7520bc90c431671a9a8080fecb35e31a96734098f1109ec673e4df4371ce7->leave($__internal_95f7520bc90c431671a9a8080fecb35e31a96734098f1109ec673e4df4371ce7_prof);
+        $__internal_fd960e717595a1caebe26d17db8bbedb2ac3ffb46e6f14fc728a22294d397bf3->leave($__internal_fd960e717595a1caebe26d17db8bbedb2ac3ffb46e6f14fc728a22294d397bf3_prof);
 
         
-        $__internal_91f8f9cb3de6e3ced9e0674a2d43e4ceb73a9fa044a61661734c8e9183f9e4e7->leave($__internal_91f8f9cb3de6e3ced9e0674a2d43e4ceb73a9fa044a61661734c8e9183f9e4e7_prof);
+        $__internal_3e9ba872578a85d4b0a6120e8eddb1fd4c1ef9df878c158634df118bf5825b0e->leave($__internal_3e9ba872578a85d4b0a6120e8eddb1fd4c1ef9df878c158634df118bf5825b0e_prof);
 
     }
 
-    // line 9
+    // line 62
     public function block_body($context, array $blocks = array())
     {
-        $__internal_96e35b49d2da65aad8a14073f35236387bfdfa7f82efa08f03aeb15832fb233e = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
-        $__internal_96e35b49d2da65aad8a14073f35236387bfdfa7f82efa08f03aeb15832fb233e->enter($__internal_96e35b49d2da65aad8a14073f35236387bfdfa7f82efa08f03aeb15832fb233e_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
+        $__internal_88c60e1aa610af68456c970c657c5519944ccbd50ef9bab9b87d85f366ef4812 = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_88c60e1aa610af68456c970c657c5519944ccbd50ef9bab9b87d85f366ef4812->enter($__internal_88c60e1aa610af68456c970c657c5519944ccbd50ef9bab9b87d85f366ef4812_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
-        $__internal_c4c44f61d4166029303a1a87fd5c47599e66e2b0ee539c9b1a46e330a8f122b7 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
-        $__internal_c4c44f61d4166029303a1a87fd5c47599e66e2b0ee539c9b1a46e330a8f122b7->enter($__internal_c4c44f61d4166029303a1a87fd5c47599e66e2b0ee539c9b1a46e330a8f122b7_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
-
-        
-        $__internal_c4c44f61d4166029303a1a87fd5c47599e66e2b0ee539c9b1a46e330a8f122b7->leave($__internal_c4c44f61d4166029303a1a87fd5c47599e66e2b0ee539c9b1a46e330a8f122b7_prof);
+        $__internal_4f20b6158bd4db766ee65bf0406a67b528c337cc3c948134e92b359a8546a999 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_4f20b6158bd4db766ee65bf0406a67b528c337cc3c948134e92b359a8546a999->enter($__internal_4f20b6158bd4db766ee65bf0406a67b528c337cc3c948134e92b359a8546a999_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
         
-        $__internal_96e35b49d2da65aad8a14073f35236387bfdfa7f82efa08f03aeb15832fb233e->leave($__internal_96e35b49d2da65aad8a14073f35236387bfdfa7f82efa08f03aeb15832fb233e_prof);
+        $__internal_4f20b6158bd4db766ee65bf0406a67b528c337cc3c948134e92b359a8546a999->leave($__internal_4f20b6158bd4db766ee65bf0406a67b528c337cc3c948134e92b359a8546a999_prof);
+
+        
+        $__internal_88c60e1aa610af68456c970c657c5519944ccbd50ef9bab9b87d85f366ef4812->leave($__internal_88c60e1aa610af68456c970c657c5519944ccbd50ef9bab9b87d85f366ef4812_prof);
 
     }
 
@@ -106,7 +159,7 @@ class __TwigTemplate_5b20544d98168e0d293fc37f78314a076c7f3d5afbbd34955dca93cd90a
 
     public function getDebugInfo()
     {
-        return array (  81 => 9,  63 => 4,  49 => 12,  45 => 10,  43 => 9,  37 => 6,  32 => 4,  27 => 1,);
+        return array (  134 => 62,  116 => 4,  102 => 65,  98 => 63,  96 => 62,  36 => 5,  32 => 4,  27 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -121,17 +174,70 @@ class __TwigTemplate_5b20544d98168e0d293fc37f78314a076c7f3d5afbbd34955dca93cd90a
     {
         return new Twig_Source("<!DOCTYPE html>
 <html>
-  <head>
+<head>
     <title>{% block title %}Cátalogo Online{% endblock %}</title>
-
     <link rel=\"stylesheet\" href=\"{{ asset('css/bootstrap.min.css') }}\" />
-  </head>
-  <body>
-    {% block body %}{% endblock %}
-    <script src=\"https://code.jquery.com/jquery-3.6.0.min.js\"></script>
+</head>
+<body>
+    <nav class=\"navbar navbar-default\">
+        <div class=\"container-fluid\">
+            <div class=\"navbar-header\">
+                <button type=\"button\" class=\"navbar-toggle collapsed\" data-toggle=\"collapse\" data-target=\"#bs-example-navbar-collapse-1\" aria-expanded=\"false\">
+                    <span class=\"sr-only\">Toggle navigation</span>
+                    <span class=\"icon-bar\"></span>
+                    <span class=\"icon-bar\"></span>
+                    <span class=\"icon-bar\"></span>
+                </button>
+                <a class=\"navbar-brand\" href=\"/\">Cátalogo Online</a>
+            </div>
 
+            <div class=\"collapse navbar-collapse\" id=\"bs-example-navbar-collapse-1\">
+                <ul class=\"nav navbar-nav\">
+                    <li class=\"active\">
+                        <a href=\"/productos\">Todos los productos<span class=\"sr-only\">(current)</span></a>
+                    </li>
+                    <li><a href=\"#\"></a></li>
+                    <li class=\"dropdown\">
+                        <a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\" role=\"button\" aria-haspopup=\"true\" aria-expanded=\"false\">Categorías <span class=\"caret\"></span></a>
+                        <ul class=\"dropdown-menu\">
+                            <li><a href=\"#\">Camas</a></li>
+                            <li><a href=\"#\">Muebles de dormitorio</a></li>
+                            <li><a href=\"#\">Decoración de paredes</a></li>
+                            <li role=\"separator\" class=\"divider\"></li>
+                            <li><a href=\"#\">Cocina</a></li>
+                            <li role=\"separator\" class=\"divider\"></li>
+                            <li><a href=\"#\">Baño</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <form class=\"navbar-form navbar-left\">
+                    <div class=\"form-group\">
+                        <input type=\"text\" class=\"form-control\" placeholder=\"Buscar\" />
+                    </div>
+                    <button type=\"submit\" class=\"btn btn-default\">Buscar</button>
+                </form>
+                <ul class=\"nav navbar-nav navbar-right\">
+                    <li><a href=\"#\">Link</a></li>
+                    <li class=\"dropdown\">
+                        <a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\" role=\"button\" aria-haspopup=\"true\" aria-expanded=\"false\">Dropdown <span class=\"caret\"></span></a>
+                        <ul class=\"dropdown-menu\">
+                            <li><a href=\"#\">Action</a></li>
+                            <li><a href=\"#\">Another action</a></li>
+                            <li><a href=\"#\">Something else here</a></li>
+                            <li role=\"separator\" class=\"divider\"></li>
+                            <li><a href=\"#\">Separated link</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
+
+    {% block body %}{% endblock %}
+
+    <script src=\"https://code.jquery.com/jquery-3.6.0.min.js\"></script>
     <script src=\"{{ asset('js/bootstrap.min.js') }}\"></script>
-  </body>
+</body>
 </html>
 ", "base.html.twig", "C:\\Users\\Usuario\\OneDrive\\Escritorio\\tp_as\\app\\Resources\\views\\base.html.twig");
     }

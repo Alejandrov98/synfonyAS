@@ -17,62 +17,64 @@ class DefaultController extends Controller
     public function indexAction(Request $request)
     {
         // replace this example code with whatever you need
-        return $this->render('@AppBundle/Resources/Views/Index.html.twig', [
+        return $this->render('@AppBundle/Resources/views/Index.html.twig', [
             'base_dir' => realpath($this->getParameter('kernel.root_dir') . '/..') . DIRECTORY_SEPARATOR,
         ]);
     }
-    // public function indexAction(Request $request)
-    // {
-    //     // replace this example code with whatever you need
-    //     return $this->render('default/index.html.twig', [
-    //         'base_dir' => realpath($this->getParameter('kernel.root_dir') . '/..') . DIRECTORY_SEPARATOR,
-    //     ]);
-    // }
-
 
     /**
-     * @Route("/producto", name="productos_list")
-     * @Method({"GET"})
+     * @Route("/productos", name="productos")
      */
-    public function listProducto(Request $request)
+    public function productosAction()   
     {
-        return new Response(
-            '<html><body>' . 'Nro de productos: ' . $request->get('nro') . '</body></html>'
-
-        );
+        return $this->render('ProductosBundle:Default:index.html.twig');
     }
+    
 
-    /**
-     * @Route("/producto/new", name="cms_producto_new")
-     * @Method({"POST"})
-     */
-    public function newProducto(Request $request)
-    {
-        return new Response(
-            json_encode($request->request->all())
-            );
-    }
 
-      /**
-     * @Route("/producto/{id}/edit", name="cms_producto_edit")
-     * @Method({"PUT"})
-     */
+//     /**
+//      * @Route("/producto", name="productos_list")
+//      * @Method({"GET"})
+//      */
+//     public function listProducto(Request $request)
+//     {
+//         return new Response(
+//             '<html><body>' . 'Nro de productos: ' . $request->get('nro') . '</body></html>'
 
-    public function editProducto($id)
-    {
-        return new Response(
-            'Editar Producto ID:'.$id
-            );
-    }
+//         );
+//     }
 
-     /**
-     * @Route("/producto/id", name="cms_producto_delete")
-     * @Method({"DELETE"})
-     */
-    public function deleteProducto($id)
-    {
-        return new Response(
-            'Borrar Producto ID:'.$id
-            );
-    }
+//     /**
+//      * @Route("/producto/new", name="cms_producto_new")
+//      * @Method({"POST"})
+//      */
+//     public function newProducto(Request $request)
+//     {
+//         return new Response(
+//             json_encode($request->request->all())
+//         );
+//     }
+
+//     /**
+//      * @Route("/producto/{id}/edit", name="cms_producto_edit")
+//      * @Method({"PUT"})
+//      */
+
+//     public function editProducto($id)
+//     {
+//         return new Response(
+//             'Editar Producto ID:' . $id
+//         );
+//     }
+
+//     /**
+//      * @Route("/producto/id", name="cms_producto_delete")
+//      * @Method({"DELETE"})
+//      */
+//     public function deleteProducto($id)
+//     {
+//         return new Response(
+//             'Borrar Producto ID:' . $id
+//         );
+//     }
 }

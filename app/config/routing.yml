@@ -1,3 +1,8 @@
+productos:
+    resource: "@ProductosBundle/Controller/"
+    type:     annotation
+    prefix:   /productos
+
 blog:
     resource: "@BlogBundle/Controller/"
     type:     annotation
@@ -6,3 +11,6 @@ blog:
 app:
     resource: '@AppBundle/Controller/'
     type: annotation
+
+
+
