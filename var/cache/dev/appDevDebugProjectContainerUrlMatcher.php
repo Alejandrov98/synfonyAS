@@ -121,18 +121,32 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
         }
 
         // productos
-        if ($pathinfo === '/productos') {
+        if (rtrim($pathinfo, '/') === '') {
+            if (substr($pathinfo, -1) !== '/') {
+                return $this->redirect($pathinfo.'/', 'productos');
+            }
+
             return array (  '_controller' => 'AppBundle\\Controller\\DefaultController::productosAction',  '_route' => 'productos',);
+        }
+
+        // get_product
+        if ($pathinfo === '/get/product') {
+            return array (  '_controller' => 'AppBundle\\Controller\\ProductController::getAllProducts',  '_route' => 'get_product',);
+        }
+
+        // update_product
+        if (0 === strpos($pathinfo, '/update/product') && preg_match('#^/update/product/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'update_product')), array (  '_controller' => 'AppBundle\\Controller\\ProductController::updateProduct',));
+        }
+
+        // delete_product
+        if (0 === strpos($pathinfo, '/delete/product') && preg_match('#^/delete/product/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'delete_product')), array (  '_controller' => 'AppBundle\\Controller\\ProductController::deleteProduct',));
         }
 
         // insert_user
         if ($pathinfo === '/insert/user') {
             return array (  '_controller' => 'AppBundle\\Controller\\UserController::insertUser',  '_route' => 'insert_user',);
-        }
-
-        // get_usuarios
-        if ($pathinfo === '/get/usuarios') {
-            return array (  '_controller' => 'AppBundle\\Controller\\UserController::getAllPost',  '_route' => 'get_usuarios',);
         }
 
         throw 0 < count($allow) ? new MethodNotAllowedException(array_unique($allow)) : new ResourceNotFoundException();

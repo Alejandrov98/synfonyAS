@@ -29,18 +29,5 @@ class UserController extends Controller
         return new Response("Se inserto nuevo usuario con ID:" . $user->getId());
     }
 
-    /**
-     * @Route("/get/usuarios", name="get_usuarios")
-     */
-
-     public function getAllPost()
-     {
-        $em = $this->getDoctrine()->getManager();
-        $repository = $em->getRepository('AppBundle:User');
-        $users = $repository->findAll();
-        dump($users);
-
-        return new Response('Datos Tabla Post');
-
-     }
+    
 }

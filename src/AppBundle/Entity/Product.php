@@ -36,9 +36,8 @@ class Product
     private $image;
 
     /**
-     * @var string
-     *
-     * @ORM\Column(name="category", type="string", length=255)
+     * @ORM\ManyToOne(targetEntity="Category")
+     * @ORM\JoinColumn(name="category_id", referencedColumnName="id")
      */
     private $category;
 
@@ -104,11 +103,11 @@ class Product
     /**
      * Set category
      *
-     * @param string $category
+     * @param Category $category
      *
      * @return Product
      */
-    public function setCategory($category)
+    public function setCategory(Category $category = null)
     {
         $this->category = $category;
 
@@ -118,7 +117,7 @@ class Product
     /**
      * Get category
      *
-     * @return string
+     * @return Category
      */
     public function getCategory()
     {
